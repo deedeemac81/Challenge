@@ -1,0 +1,56 @@
+## Dionne MacIntosh ##
+## 2i challenge ##
+
+## assumptions ##
+## program will run through nested statements within While loop ##
+## illustrate how many times an iteration will happen to get from int N to int above 3 * X, based on multiples of A ##
+## X is an integer, input by user ##
+## N is another integer, input by user ##
+## A is the number loop iterates by each time and is also input by user ##
+
+
+print("Welcome to Dionne's Solution", "This program will an integeate by A until it reaches X", "The program will the iterate by A +1 until it reaches 2X", "Finally, the program will iterate by A + 2 until it reaches 3 * X", "The output will confirm the new integer value after each iteration and tell you how many iterations there were to get there!", sep = "\n")
+   
+
+def iterCount():
+    X = int(input("Please enter the number you'd like the program to iterate to: "))
+    N = int(input("Please enter the number you'd like to start counting from: "))
+    A = int(input("Choose the number to iterate by: "))
+    count = 0 
+
+    while N <= 3 * X:
+
+        if N < X:
+            N = N + A
+            print("N equals", N)
+            count += 1
+
+        elif N >= X and N <= 2 * X:
+            N = N + (A+1)
+            print("N equals", N, "This is greater than X but less than 2 * X", sep = " ")
+            count += 1  
+
+        elif N >= 2 * X and N <= 3 * X:
+            N = N + (A+2)
+            print("N equals", N, "N is greater than 2 * X ", sep = " ")
+            count += 1        
+            
+    print("It took", count, "iterations to reach", N)
+
+def exitSum():    
+    
+    print("This is over 3 times greater than the original number, X")
+    print("Thank you for using Dionne's Solution !")
+    restartOpt = int(input("Press 1 to start again or any other key to end "))
+
+    if restartOpt == 1:
+        iterCount()
+        
+
+    else:
+        print("Exit - Goodbye")
+        exit()
+    
+iterCount()
+exitSum()
+
